@@ -55,5 +55,38 @@ class ViewList:
         self.collectionView = collectionView
         
         addSubview(collectionView)
+        
+        NSLayoutConstraint(
+            item:collectionView,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:0).isActive = true
+        NSLayoutConstraint(
+            item:collectionView,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0).isActive = true
+        NSLayoutConstraint(
+            item:collectionView,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0).isActive = true
+        NSLayoutConstraint(
+            item:collectionView,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:0).isActive = true
     }
 }
