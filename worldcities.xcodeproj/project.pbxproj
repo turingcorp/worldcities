@@ -15,6 +15,7 @@
 		DA952ADA1F3CD65500698848 /* ViewListCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952AD91F3CD65500698848 /* ViewListCollection.swift */; };
 		DA952ADC1F3CD71800698848 /* ViewListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952ADB1F3CD71800698848 /* ViewListCollectionCell.swift */; };
 		DA952ADE1F3CDA8900698848 /* ViewListBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952ADD1F3CDA8900698848 /* ViewListBar.swift */; };
+		DA952AE11F3CE0E500698848 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA952ADF1F3CE0E500698848 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DA952AD91F3CD65500698848 /* ViewListCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewListCollection.swift; sourceTree = "<group>"; };
 		DA952ADB1F3CD71800698848 /* ViewListCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewListCollectionCell.swift; sourceTree = "<group>"; };
 		DA952ADD1F3CDA8900698848 /* ViewListBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewListBar.swift; sourceTree = "<group>"; };
+		DA952AE01F3CE0E500698848 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		DA952ACD1F3CC68F00698848 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DA952ADF1F3CE0E500698848 /* Localizable.strings */,
 				DA952ACF1F3CC6BB00698848 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA952AD01F3CC6BB00698848 /* LaunchScreen.storyboard in Resources */,
+				DA952AE11F3CE0E500698848 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +191,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DA952ADF1F3CE0E500698848 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA952AE01F3CE0E500698848 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DA1011AB1F3CC4D600489E74 /* Debug */ = {
