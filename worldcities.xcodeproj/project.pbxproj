@@ -41,9 +41,41 @@
 		DA10119D1F3CC4D600489E74 /* worldcities */ = {
 			isa = PBXGroup;
 			children = (
+				DA952ACB1F3CC68F00698848 /* Controller */,
+				DA952ACC1F3CC68F00698848 /* Model */,
+				DA952ACE1F3CC68F00698848 /* View */,
+				DA952ACD1F3CC68F00698848 /* Resources */,
 				DA1011AA1F3CC4D600489E74 /* Info.plist */,
 			);
 			path = worldcities;
+			sourceTree = "<group>";
+		};
+		DA952ACB1F3CC68F00698848 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DA952ACC1F3CC68F00698848 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DA952ACD1F3CC68F00698848 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DA952ACE1F3CC68F00698848 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
