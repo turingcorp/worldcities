@@ -7,7 +7,7 @@ class ViewList:
     UICollectionViewDelegateFlowLayout
 {
     private(set) weak var collectionView:UICollectionView!
-    private weak var controller:ControllerList!
+    private(set) weak var controller:ControllerList!
     private let kCellSeparation:CGFloat = 1
     
     init(controller:ControllerList)
