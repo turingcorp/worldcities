@@ -10,6 +10,7 @@
 		DA952AD01F3CC6BB00698848 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA952ACF1F3CC6BB00698848 /* LaunchScreen.storyboard */; };
 		DA952AD21F3CC75700698848 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952AD11F3CC75700698848 /* AppDelegate.swift */; };
 		DA952AD41F3CC8CF00698848 /* ControllerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952AD31F3CC8CF00698848 /* ControllerList.swift */; };
+		DA952AD61F3CCB0800698848 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952AD51F3CCB0800698848 /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +19,7 @@
 		DA952ACF1F3CC6BB00698848 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA952AD11F3CC75700698848 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA952AD31F3CC8CF00698848 /* ControllerList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerList.swift; sourceTree = "<group>"; };
+		DA952AD51F3CCB0800698848 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				DA952AD11F3CC75700698848 /* AppDelegate.swift */,
+				DA952AD51F3CCB0800698848 /* NavigationController.swift */,
 				DA952AD31F3CC8CF00698848 /* ControllerList.swift */,
 			);
 			path = Controller;
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA952AD21F3CC75700698848 /* AppDelegate.swift in Sources */,
+				DA952AD61F3CCB0800698848 /* NavigationController.swift in Sources */,
 				DA952AD41F3CC8CF00698848 /* ControllerList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
