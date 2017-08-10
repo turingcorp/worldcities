@@ -11,6 +11,7 @@
 		DA952AD21F3CC75700698848 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952AD11F3CC75700698848 /* AppDelegate.swift */; };
 		DA952AD41F3CC8CF00698848 /* ControllerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952AD31F3CC8CF00698848 /* ControllerList.swift */; };
 		DA952AD61F3CCB0800698848 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952AD51F3CCB0800698848 /* NavigationController.swift */; };
+		DA952AD81F3CD23000698848 /* ViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952AD71F3CD23000698848 /* ViewList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		DA952AD11F3CC75700698848 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA952AD31F3CC8CF00698848 /* ControllerList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerList.swift; sourceTree = "<group>"; };
 		DA952AD51F3CCB0800698848 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		DA952AD71F3CD23000698848 /* ViewList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		DA952ACE1F3CC68F00698848 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DA952AD71F3CD23000698848 /* ViewList.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA952AD81F3CD23000698848 /* ViewList.swift in Sources */,
 				DA952AD21F3CC75700698848 /* AppDelegate.swift in Sources */,
 				DA952AD61F3CCB0800698848 /* NavigationController.swift in Sources */,
 				DA952AD41F3CC8CF00698848 /* ControllerList.swift in Sources */,
