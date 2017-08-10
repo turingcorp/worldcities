@@ -16,6 +16,7 @@
 		DA952ADC1F3CD71800698848 /* ViewListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952ADB1F3CD71800698848 /* ViewListCollectionCell.swift */; };
 		DA952ADE1F3CDA8900698848 /* ViewListBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952ADD1F3CDA8900698848 /* ViewListBar.swift */; };
 		DA952AE11F3CE0E500698848 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA952ADF1F3CE0E500698848 /* Localizable.strings */; };
+		DA952AE31F3CE45100698848 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = DA952AE21F3CE45100698848 /* cities.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		DA952ADB1F3CD71800698848 /* ViewListCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewListCollectionCell.swift; sourceTree = "<group>"; };
 		DA952ADD1F3CDA8900698848 /* ViewListBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewListBar.swift; sourceTree = "<group>"; };
 		DA952AE01F3CE0E500698848 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DA952AE21F3CE45100698848 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		DA952ACD1F3CC68F00698848 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DA952AE21F3CE45100698848 /* cities.json */,
 				DA952ADF1F3CE0E500698848 /* Localizable.strings */,
 				DA952ACF1F3CC6BB00698848 /* LaunchScreen.storyboard */,
 			);
@@ -168,6 +171,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA952AE31F3CE45100698848 /* cities.json in Resources */,
 				DA952AD01F3CC6BB00698848 /* LaunchScreen.storyboard in Resources */,
 				DA952AE11F3CE0E500698848 /* Localizable.strings in Resources */,
 			);
