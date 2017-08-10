@@ -50,8 +50,13 @@ class ViewList:
         collectionView.showsVerticalScrollIndicator = true
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.alwaysBounceVertical = true
+        collectionView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.onDrag
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.register(
+            ViewListCollectionCell.self,
+            forCellWithReuseIdentifier:
+            ViewListCollectionCell.reusableIdentifier)
         self.collectionView = collectionView
         
         addSubview(collectionView)
