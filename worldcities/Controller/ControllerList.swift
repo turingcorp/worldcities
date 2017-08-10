@@ -11,4 +11,10 @@ class ControllerList:UIViewController
     {
         return nil
     }
+    
+    override func loadView()
+    {
+        let view:ViewList = ViewList(controller:self)
+        self.view = view
+    }
 }
