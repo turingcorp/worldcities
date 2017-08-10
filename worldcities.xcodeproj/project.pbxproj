@@ -6,21 +6,8 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		DA10119F1F3CC4D600489E74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA10119E1F3CC4D600489E74 /* AppDelegate.swift */; };
-		DA1011A11F3CC4D600489E74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1011A01F3CC4D600489E74 /* ViewController.swift */; };
-		DA1011A41F3CC4D600489E74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1011A21F3CC4D600489E74 /* Main.storyboard */; };
-		DA1011A61F3CC4D600489E74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1011A51F3CC4D600489E74 /* Assets.xcassets */; };
-		DA1011A91F3CC4D600489E74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1011A71F3CC4D600489E74 /* LaunchScreen.storyboard */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		DA10119B1F3CC4D600489E74 /* worldcities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = worldcities.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA10119E1F3CC4D600489E74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DA1011A01F3CC4D600489E74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DA1011A31F3CC4D600489E74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DA1011A51F3CC4D600489E74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DA1011A81F3CC4D600489E74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA1011AA1F3CC4D600489E74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,11 +41,6 @@
 		DA10119D1F3CC4D600489E74 /* worldcities */ = {
 			isa = PBXGroup;
 			children = (
-				DA10119E1F3CC4D600489E74 /* AppDelegate.swift */,
-				DA1011A01F3CC4D600489E74 /* ViewController.swift */,
-				DA1011A21F3CC4D600489E74 /* Main.storyboard */,
-				DA1011A51F3CC4D600489E74 /* Assets.xcassets */,
-				DA1011A71F3CC4D600489E74 /* LaunchScreen.storyboard */,
 				DA1011AA1F3CC4D600489E74 /* Info.plist */,
 			);
 			path = worldcities;
@@ -124,9 +106,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA1011A91F3CC4D600489E74 /* LaunchScreen.storyboard in Resources */,
-				DA1011A61F3CC4D600489E74 /* Assets.xcassets in Resources */,
-				DA1011A41F3CC4D600489E74 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,31 +116,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA1011A11F3CC4D600489E74 /* ViewController.swift in Sources */,
-				DA10119F1F3CC4D600489E74 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		DA1011A21F3CC4D600489E74 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DA1011A31F3CC4D600489E74 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		DA1011A71F3CC4D600489E74 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DA1011A81F3CC4D600489E74 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DA1011AB1F3CC4D600489E74 /* Debug */ = {
@@ -304,6 +262,7 @@
 				DA1011AF1F3CC4D600489E74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
