@@ -5,6 +5,7 @@ class ControllerList:UIViewController
     init()
     {
         super.init(nibName:nil, bundle:nil)
+        navigationItem.titleView = ViewListBar()
     }
     
     required init?(coder:NSCoder)
