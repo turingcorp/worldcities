@@ -12,6 +12,7 @@
 		DA952AD41F3CC8CF00698848 /* ControllerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952AD31F3CC8CF00698848 /* ControllerList.swift */; };
 		DA952AD61F3CCB0800698848 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952AD51F3CCB0800698848 /* NavigationController.swift */; };
 		DA952AD81F3CD23000698848 /* ViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952AD71F3CD23000698848 /* ViewList.swift */; };
+		DA952ADA1F3CD65500698848 /* ViewListCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952AD91F3CD65500698848 /* ViewListCollection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		DA952AD31F3CC8CF00698848 /* ControllerList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerList.swift; sourceTree = "<group>"; };
 		DA952AD51F3CCB0800698848 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		DA952AD71F3CD23000698848 /* ViewList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewList.swift; sourceTree = "<group>"; };
+		DA952AD91F3CD65500698848 /* ViewListCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewListCollection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				DA952AD71F3CD23000698848 /* ViewList.swift */,
+				DA952AD91F3CD65500698848 /* ViewListCollection.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				DA952AD81F3CD23000698848 /* ViewList.swift in Sources */,
 				DA952AD21F3CC75700698848 /* AppDelegate.swift in Sources */,
 				DA952AD61F3CCB0800698848 /* NavigationController.swift in Sources */,
+				DA952ADA1F3CD65500698848 /* ViewListCollection.swift in Sources */,
 				DA952AD41F3CC8CF00698848 /* ControllerList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
