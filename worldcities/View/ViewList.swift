@@ -145,4 +145,14 @@ class ViewList:
             multiplier:1,
             constant:0).isActive = true
     }
+    
+    //MARK: internal
+    
+    func itemsLoaded()
+    {
+        activityIndicator?.stopAnimating()
+        activityIndicator?.removeFromSuperview()
+        collectionView.isHidden = false
+        collectionView.reloadData()
+    }
 }
