@@ -6,9 +6,14 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DA952AD01F3CC6BB00698848 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA952ACF1F3CC6BB00698848 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		DA10119B1F3CC4D600489E74 /* worldcities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = worldcities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1011AA1F3CC4D600489E74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA952ACF1F3CC6BB00698848 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +72,7 @@
 		DA952ACD1F3CC68F00698848 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DA952ACF1F3CC6BB00698848 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -137,6 +143,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA952AD01F3CC6BB00698848 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
