@@ -19,6 +19,7 @@
 		DA952AE31F3CE45100698848 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = DA952AE21F3CE45100698848 /* cities.json */; };
 		DA952AE51F3CE57300698848 /* ModelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952AE41F3CE57300698848 /* ModelList.swift */; };
 		DA952AE71F3CE5AB00698848 /* ModelListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952AE61F3CE5AB00698848 /* ModelListItem.swift */; };
+		DA952AE91F3CE7CE00698848 /* ModelListParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952AE81F3CE7CE00698848 /* ModelListParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		DA952AE21F3CE45100698848 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		DA952AE41F3CE57300698848 /* ModelList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelList.swift; sourceTree = "<group>"; };
 		DA952AE61F3CE5AB00698848 /* ModelListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelListItem.swift; sourceTree = "<group>"; };
+		DA952AE81F3CE7CE00698848 /* ModelListParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelListParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				DA952AE41F3CE57300698848 /* ModelList.swift */,
+				DA952AE81F3CE7CE00698848 /* ModelListParser.swift */,
 				DA952AE61F3CE5AB00698848 /* ModelListItem.swift */,
 			);
 			path = Model;
@@ -190,6 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA952AE91F3CE7CE00698848 /* ModelListParser.swift in Sources */,
 				DA952AD81F3CD23000698848 /* ViewList.swift in Sources */,
 				DA952AE71F3CE5AB00698848 /* ModelListItem.swift in Sources */,
 				DA952AD21F3CC75700698848 /* AppDelegate.swift in Sources */,
