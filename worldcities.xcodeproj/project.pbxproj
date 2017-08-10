@@ -14,6 +14,7 @@
 		DA952AD81F3CD23000698848 /* ViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952AD71F3CD23000698848 /* ViewList.swift */; };
 		DA952ADA1F3CD65500698848 /* ViewListCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952AD91F3CD65500698848 /* ViewListCollection.swift */; };
 		DA952ADC1F3CD71800698848 /* ViewListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952ADB1F3CD71800698848 /* ViewListCollectionCell.swift */; };
+		DA952ADE1F3CDA8900698848 /* ViewListBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952ADD1F3CDA8900698848 /* ViewListBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DA952AD71F3CD23000698848 /* ViewList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewList.swift; sourceTree = "<group>"; };
 		DA952AD91F3CD65500698848 /* ViewListCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewListCollection.swift; sourceTree = "<group>"; };
 		DA952ADB1F3CD71800698848 /* ViewListCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewListCollectionCell.swift; sourceTree = "<group>"; };
+		DA952ADD1F3CDA8900698848 /* ViewListBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewListBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				DA952AD71F3CD23000698848 /* ViewList.swift */,
+				DA952ADD1F3CDA8900698848 /* ViewListBar.swift */,
 				DA952AD91F3CD65500698848 /* ViewListCollection.swift */,
 				DA952ADB1F3CD71800698848 /* ViewListCollectionCell.swift */,
 			);
@@ -178,6 +181,7 @@
 				DA952ADC1F3CD71800698848 /* ViewListCollectionCell.swift in Sources */,
 				DA952AD61F3CCB0800698848 /* NavigationController.swift in Sources */,
 				DA952ADA1F3CD65500698848 /* ViewListCollection.swift in Sources */,
+				DA952ADE1F3CDA8900698848 /* ViewListBar.swift in Sources */,
 				DA952AD41F3CC8CF00698848 /* ControllerList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
