@@ -30,7 +30,15 @@ class ControllerList:UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        model.loadItems()
+        
+        model.loadItems
+        {
+            DispatchQueue.main.async
+            { [weak self] in
+                
+                self?.itemsLoaded()
+            }
+        }
     }
     
     //MARK: private
