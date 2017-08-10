@@ -7,6 +7,7 @@ class ViewListBar:UISearchBar
         super.init(frame:CGRect.zero)
         backgroundColor = UIColor.clear
         searchBarStyle = UISearchBarStyle.minimal
+        placeholder = NSLocalizedString("ViewListBar_placeholder", comment:"")
     }
     
     required init?(coder:NSCoder)
