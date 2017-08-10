@@ -6,6 +6,8 @@ class ViewList:
     UICollectionViewDataSource,
     UICollectionViewDelegateFlowLayout
 {
+    var cellSize:CGSize?
+    let kCellHeight:CGFloat = 50
     private(set) weak var collectionView:UICollectionView!
     private(set) weak var controller:ControllerList!
     private let kCellSeparation:CGFloat = 1
@@ -23,6 +25,13 @@ class ViewList:
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    override func layoutSubviews()
+    {
+        cellSize = nil
+        collectionView.collectionViewLayout.invalidateLayout()
+        super.layoutSubviews()
     }
     
     //MARK: private
