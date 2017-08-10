@@ -32,4 +32,22 @@ class ControllerList:UIViewController
         super.viewDidLoad()
         model.loadItems()
     }
+    
+    //MARK: private
+    
+    private func itemsLoaded()
+    {
+        viewListBar.isHidden = false
+        
+        guard
+        
+            let view:ViewList = self.view as? ViewList
+        
+        else
+        {
+            return
+        }
+        
+        view.itemsLoaded()
+    }
 }
