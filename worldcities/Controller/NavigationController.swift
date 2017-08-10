@@ -8,6 +8,8 @@ class NavigationController:UINavigationController
         
         let list:ControllerList = ControllerList()
         addChildViewController(list)
+        
+        navigationBar.barTintColor = UIColor.white
     }
     
     required init?(coder:NSCoder)
