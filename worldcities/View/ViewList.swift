@@ -8,6 +8,7 @@ class ViewList:
 {
     var cellSize:CGSize?
     let kCellHeight:CGFloat = 50
+    private weak var activityIndicator:UIActivityIndicatorView?
     private(set) weak var collectionView:UICollectionView!
     private(set) weak var controller:ControllerList!
     private let kCellSeparation:CGFloat = 1
@@ -19,7 +20,7 @@ class ViewList:
         backgroundColor = UIColor.white
         self.controller = controller
         
-        factoryCollectionView()
+        factoryViews()
     }
     
     required init?(coder:NSCoder)
@@ -36,8 +37,14 @@ class ViewList:
     
     //MARK: private
     
-    private func factoryCollectionView()
+    private func factoryViews()
     {
+        let activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView(
+            activityIndicatorStyle:UIActivityIndicatorViewStyle.gray)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.startAnimating()
+        self.activityIndicator = activityIndicator
+        
         let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         flow.scrollDirection = UICollectionViewScrollDirection.vertical
         flow.headerReferenceSize = CGSize.zero
@@ -53,6 +60,7 @@ class ViewList:
         let collectionView:UICollectionView = UICollectionView(
             frame:CGRect.zero,
             collectionViewLayout:flow)
+        collectionView.isHidden = true
         collectionView.clipsToBounds = true
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = UIColor.clear
@@ -68,7 +76,41 @@ class ViewList:
             ViewListCollectionCell.reusableIdentifier)
         self.collectionView = collectionView
         
+        addSubview(activityIndicator)
         addSubview(collectionView)
+        
+        NSLayoutConstraint(
+            item:activityIndicator,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:0).isActive = true
+        NSLayoutConstraint(
+            item:activityIndicator,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0).isActive = true
+        NSLayoutConstraint(
+            item:activityIndicator,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0).isActive = true
+        NSLayoutConstraint(
+            item:activityIndicator,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:0).isActive = true
         
         NSLayoutConstraint(
             item:collectionView,
