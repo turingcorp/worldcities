@@ -8,4 +8,11 @@ class ModelList
     {
         items = []
     }
+    
+    //MARK: internal
+    
+    func itemsLoaded(items:[ModelListItem])
+    {
+        self.items = items
+    }
 }
