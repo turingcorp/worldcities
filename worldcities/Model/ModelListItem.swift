@@ -4,6 +4,7 @@ class ModelListItem
 {
     let identifier:Int
     let compareString:String
+    let filterString:String
     let name:String
     let country:String
     let latitude:Double
@@ -28,5 +29,6 @@ class ModelListItem
         var compareString = nameLowercase
         compareString.append(countryLowercase)
         self.compareString = compareString
+        filterString = nameLowercase
     }
 }
