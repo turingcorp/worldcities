@@ -2,6 +2,8 @@ import UIKit
 
 extension ViewList
 {
+    private static let kDeselectTime:TimeInterval = 0.3
+    
     //MARK: private
     
     private func modelAtIndex(indexPath:IndexPath) -> ModelListItem
@@ -41,5 +43,26 @@ extension ViewList
         cell.config(model:item)
         
         return cell
+    }
+    
+    func collectionView(
+        _ collectionView:UICollectionView,
+        didSelectItemAt indexPath:IndexPath)
+    {
+        collectionView.isUserInteractionEnabled = false
+        
+        let item:ModelListItem = modelAtIndex(indexPath:indexPath)
+        controller.openMap(item:item)
+        
+        DispatchQueue.main.asyncAfter(
+            deadline:DispatchTime.now() + ViewList.kDeselectTime)
+        { [weak collectionView] in
+            
+            collectionView?.selectItem(
+                at:nil,
+                animated:false,
+                scrollPosition:UICollectionViewScrollPosition())
+            collectionView?.isUserInteractionEnabled = true
+        }
     }
 }
