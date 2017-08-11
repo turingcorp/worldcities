@@ -27,5 +27,16 @@ class ControllerMap:UIViewController
     {
         super.viewDidAppear(animated)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        
+        guard
+        
+            let view:ViewMap = self.view as? ViewMap
+        
+        else
+        {
+            return
+        }
+        
+        view.viewDidAppear()
     }
 }
