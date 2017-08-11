@@ -10,11 +10,7 @@ class ControllerList:UIViewController
         model = ModelList()
         
         super.init(nibName:nil, bundle:nil)
-        
-        let viewListBar:ViewListBar = ViewListBar()
-        viewListBar.delegate = self
-        self.viewListBar = viewListBar
-        navigationItem.titleView = viewListBar
+        title = NSLocalizedString("ControllerList_title", comment:"")
     }
     
     required init?(coder:NSCoder)
@@ -36,14 +32,12 @@ class ControllerList:UIViewController
         automaticallyAdjustsScrollViewInsets = false
         
         model.loadItems
-        { [weak self] in
-            
-            self?.refreshDisplayItems()
-            
+        {   
             DispatchQueue.main.async
             { [weak self] in
                 
                 self?.itemsLoaded()
+                self?.refreshDisplayItems()
             }
         }
     }
@@ -52,7 +46,7 @@ class ControllerList:UIViewController
     
     private func itemsLoaded()
     {
-        viewListBar.isHidden = false
+        factorySearchBar()
         
         guard
         
@@ -64,5 +58,15 @@ class ControllerList:UIViewController
         }
         
         view.itemsLoaded()
+    }
+    
+    private func factorySearchBar()
+    {
+        title = nil
+        
+        let viewListBar:ViewListBar = ViewListBar()
+        viewListBar.delegate = self
+        self.viewListBar = viewListBar
+        navigationItem.titleView = viewListBar
     }
 }
