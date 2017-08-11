@@ -91,6 +91,20 @@ extension ModelList
         return json
     }
     
+    func loadJsonList(json:Any) -> [AnyObject]?
+    {
+        guard
+            
+            let jsonList:[AnyObject] = json as? [AnyObject]
+            
+        else
+        {
+            return nil
+        }
+        
+        return jsonList
+    }
+    
     //MARK: private
     
     private func dispatchLoadItems(completion:@escaping(() -> ()))
@@ -99,29 +113,21 @@ extension ModelList
             
             let url:URL = ModelList.factoryResourceUrl(),
             let data:Data = loadData(url:url),
-            let json:Any = loadJson(data:data)
+            let json:Any = loadJson(data:data),
+            let jsonList:[AnyObject] = loadJsonList(json:json)
             
         else
         {
             return
         }
         
-        loadItems(json:json, completion:completion)
+        loadItems(jsonList:jsonList, completion:completion)
     }
     
     private func loadItems(
-        json:Any,
+        jsonList:[AnyObject],
         completion:@escaping(() -> ()))
     {
-        guard
-        
-            let jsonList:[AnyObject] = json as? [AnyObject]
-        
-        else
-        {
-            return
-        }
-        
         var items:[ModelListItem] = []
         
         for jsonItem:AnyObject in jsonList
