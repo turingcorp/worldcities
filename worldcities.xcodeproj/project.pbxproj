@@ -20,6 +20,7 @@
 		DA952AE51F3CE57300698848 /* ModelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952AE41F3CE57300698848 /* ModelList.swift */; };
 		DA952AE71F3CE5AB00698848 /* ModelListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952AE61F3CE5AB00698848 /* ModelListItem.swift */; };
 		DA952AE91F3CE7CE00698848 /* ModelListParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952AE81F3CE7CE00698848 /* ModelListParser.swift */; };
+		DABD69B21F3D44B00089426C /* TestModelListParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABD69B11F3D44B00089426C /* TestModelListParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		DA952AE81F3CE7CE00698848 /* ModelListParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelListParser.swift; sourceTree = "<group>"; };
 		DABD69A61F3D2F590089426C /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DABD69AA1F3D2F590089426C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DABD69B11F3D44B00089426C /* TestModelListParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModelListParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,9 +146,18 @@
 		DABD69A71F3D2F590089426C /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				DABD69B01F3D447B0089426C /* Model */,
 				DABD69AA1F3D2F590089426C /* Info.plist */,
 			);
 			path = tests;
+			sourceTree = "<group>";
+		};
+		DABD69B01F3D447B0089426C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DABD69B11F3D44B00089426C /* TestModelListParser.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +217,7 @@
 					DABD69A51F3D2F590089426C = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 7AMWG3RLHN;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = DA10119A1F3CC4D600489E74;
 					};
@@ -271,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DABD69B21F3D44B00089426C /* TestModelListParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,13 +439,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_MODULES = NO;
 				DEVELOPMENT_TEAM = 7AMWG3RLHN;
 				INFOPLIST_FILE = tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iturbide.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/worldcities.app/worldcities";
 			};
@@ -442,7 +456,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_MODULES = NO;
 				DEVELOPMENT_TEAM = 7AMWG3RLHN;
 				INFOPLIST_FILE = tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
