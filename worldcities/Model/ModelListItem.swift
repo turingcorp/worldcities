@@ -20,6 +20,17 @@ class ModelListItem
         return nameLowercase
     }
     
+    private class func factoryCompareString(
+        filterString:String,
+        country:String) -> String
+    {
+        let countryLowercase:String = country.lowercased()
+        var compareString = filterString
+        compareString.append(countryLowercase)
+        
+        return compareString
+    }
+    
     init(
         identifier:Int,
         name:String,
@@ -33,11 +44,10 @@ class ModelListItem
         self.latitude = latitude
         self.longitude = longitude
         
-        filterString = ModelListItem.factoryFilterString(name:name)
-        let countryLowercase:String = country.lowercased()
-        
-        var compareString = filterString
-        compareString.append(countryLowercase)
-        self.compareString = compareString
+        filterString = ModelListItem.factoryFilterString(
+            name:name)
+        compareString = ModelListItem.factoryCompareString(
+            filterString:filterString,
+            country:country)
     }
 }
