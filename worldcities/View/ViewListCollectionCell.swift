@@ -11,7 +11,34 @@ class ViewListCollectionCell:UICollectionViewCell
     {
         super.init(frame:CGRect.zero)
         clipsToBounds = true
-        
+        factoryLabel()
+    }
+    
+    required init?(coder:NSCoder)
+    {
+        return nil
+    }
+    
+    override var isSelected:Bool
+    {
+        didSet
+        {
+            displayState()
+        }
+    }
+    
+    override var isHighlighted:Bool
+    {
+        didSet
+        {
+            displayState()
+        }
+    }
+    
+    //MARK: private
+    
+    private func factoryLabel()
+    {
         let label:UILabel = UILabel()
         label.isUserInteractionEnabled = false
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -54,29 +81,6 @@ class ViewListCollectionCell:UICollectionViewCell
             multiplier:1,
             constant:-kLabelMarginHorizontal).isActive = true
     }
-    
-    required init?(coder:NSCoder)
-    {
-        return nil
-    }
-    
-    override var isSelected:Bool
-    {
-        didSet
-        {
-            displayState()
-        }
-    }
-    
-    override var isHighlighted:Bool
-    {
-        didSet
-        {
-            displayState()
-        }
-    }
-    
-    //MARK: private
     
     private func displayState()
     {
