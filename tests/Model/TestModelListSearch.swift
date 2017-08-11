@@ -37,6 +37,7 @@ class TestModelListSearch:XCTestCase
             self?.inputEqualsLowerUpper(modelList:modelList)
             self?.inputInvalidString(modelList:modelList)
             self?.inputValidAndInvalid(modelList:modelList)
+            self?.resultsSorted(modelList:modelList)
         }
     }
     
@@ -155,5 +156,25 @@ class TestModelListSearch:XCTestCase
             foundCount,
             1,
             "search should be empty when looking for special characters")
+    }
+    
+    private func resultsSorted(modelList:ModelList)
+    {
+        let foundItems:[ModelListItem] = modelList.searchItems(
+            forInput:kStringLowerCaseA)
+        let foundCount:Int = foundItems.count
+        
+        if foundCount > 1
+        {
+            let foundA:String = foundItems[0].compareString
+            let foundB:String = foundItems[1].compareString
+            
+            let comparison:ComparisonResult = foundA.compare(foundB)
+            
+            XCTAssertNotEqual(
+                comparison,
+                ComparisonResult.orderedDescending,
+                "results are not sorted")
+        }
     }
 }
