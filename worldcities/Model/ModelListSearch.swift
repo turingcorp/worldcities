@@ -38,7 +38,7 @@ extension ModelList
         
         if countCharacters > 0
         {
-            items = []
+            items = mappedItems(withString:cleanedInput)
         }
         else
         {
@@ -49,4 +49,18 @@ extension ModelList
     }
     
     //MARK: private
+    
+    private func mappedItems(withString:String) -> [ModelListItem]
+    {
+        guard
+        
+            let items:[ModelListItem] = itemsMap[withString]
+        
+        else
+        {
+            return []
+        }
+        
+        return items
+    }
 }
