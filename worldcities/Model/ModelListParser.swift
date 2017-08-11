@@ -47,6 +47,52 @@ extension ModelList
         return item
     }
     
+    //MARK: private
+    
+    private func dispatchLoadItems(completion:@escaping(() -> ()))
+    {
+        guard
+            
+            let url:URL = ModelList.factoryResourceUrl(),
+            let data:Data = loadData(url:url),
+            let json:Any = loadJson(data:data),
+            let jsonList:[AnyObject] = loadJsonList(json:json)
+            
+        else
+        {
+            return
+        }
+        
+        loadItems(jsonList:jsonList, completion:completion)
+    }
+    
+    private func loadItems(
+        jsonList:[AnyObject],
+        completion:@escaping(() -> ()))
+    {
+        var items:[ModelListItem] = []
+        
+        for jsonItem:AnyObject in jsonList
+        {
+            guard
+            
+                let item:ModelListItem = ModelList.factoryItem(
+                    jsonItem:jsonItem)
+            
+            else
+            {
+                continue
+            }
+            
+            items.append(item)
+        }
+        
+        itemsLoaded(items:items)
+        completion()
+    }
+    
+    //MARK: internal
+    
     func loadItems(completion:@escaping(() -> ()))
     {
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
@@ -103,49 +149,5 @@ extension ModelList
         }
         
         return jsonList
-    }
-    
-    //MARK: private
-    
-    private func dispatchLoadItems(completion:@escaping(() -> ()))
-    {
-        guard
-            
-            let url:URL = ModelList.factoryResourceUrl(),
-            let data:Data = loadData(url:url),
-            let json:Any = loadJson(data:data),
-            let jsonList:[AnyObject] = loadJsonList(json:json)
-            
-        else
-        {
-            return
-        }
-        
-        loadItems(jsonList:jsonList, completion:completion)
-    }
-    
-    private func loadItems(
-        jsonList:[AnyObject],
-        completion:@escaping(() -> ()))
-    {
-        var items:[ModelListItem] = []
-        
-        for jsonItem:AnyObject in jsonList
-        {
-            guard
-            
-                let item:ModelListItem = ModelList.factoryItem(
-                    jsonItem:jsonItem)
-            
-            else
-            {
-                continue
-            }
-            
-            items.append(item)
-        }
-        
-        itemsLoaded(items:items)
-        completion()
     }
 }
