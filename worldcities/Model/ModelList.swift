@@ -17,4 +17,9 @@ class ModelList
     {
         self.items = items
     }
+    
+    func updateDisplayItems(searchString:String)
+    {
+        displayItems = searchItems(forInput:searchString)
+    }
 }
