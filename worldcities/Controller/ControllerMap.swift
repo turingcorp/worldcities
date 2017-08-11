@@ -22,4 +22,10 @@ class ControllerMap:UIViewController
         let view:ViewMap = ViewMap(controller:self)
         self.view = view
     }
+    
+    override func viewDidAppear(_ animated:Bool)
+    {
+        super.viewDidAppear(animated)
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+    }
 }
