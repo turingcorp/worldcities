@@ -10,6 +10,16 @@ class ModelListItem
     let latitude:Double
     let longitude:Double
     
+    private class func factoryFilterString(name:String) -> String
+    {
+        var nameLowercase:String = name.lowercased()
+        nameLowercase = nameLowercase.replacingOccurrences(
+            of:" ",
+            with:"")
+        
+        return nameLowercase
+    }
+    
     init(
         identifier:Int,
         name:String,
@@ -23,15 +33,10 @@ class ModelListItem
         self.latitude = latitude
         self.longitude = longitude
         
-        var nameLowercase:String = name.lowercased()
-        nameLowercase = nameLowercase.replacingOccurrences(
-            of:" ",
-            with:"")
-        
+        filterString = ModelListItem.factoryFilterString(name:name)
         let countryLowercase:String = country.lowercased()
-        filterString = nameLowercase
         
-        var compareString = nameLowercase
+        var compareString = filterString
         compareString.append(countryLowercase)
         self.compareString = compareString
     }
