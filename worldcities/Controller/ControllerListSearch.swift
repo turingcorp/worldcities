@@ -33,7 +33,7 @@ extension ControllerList:UISearchBarDelegate
             return
         }
         
-        view.collectionView.reloadData()
+        view.refreshItems()
     }
     
     //MARK: internal

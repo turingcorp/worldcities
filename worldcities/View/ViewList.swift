@@ -6,14 +6,17 @@ class ViewList:
     UICollectionViewDataSource,
     UICollectionViewDelegateFlowLayout
 {
-    private(set) weak var collectionView:UICollectionView!
     private(set) weak var controller:ControllerList!
+    private weak var collectionView:UICollectionView!
     private weak var viewListFlow:ViewListFlow!
     private weak var activityIndicator:UIActivityIndicatorView?
+    private let scrollingRect:CGRect
     private let kCellHeight:CGFloat = 50
     
     init(controller:ControllerList)
     {
+        scrollingRect = CGRect(x:0, y:0, width:1, height:1)
+        
         super.init(frame:CGRect.zero)
         clipsToBounds = true
         backgroundColor = UIColor(white:0.95, alpha:1)
@@ -148,5 +151,13 @@ class ViewList:
         activityIndicator?.stopAnimating()
         activityIndicator?.removeFromSuperview()
         collectionView.isHidden = false
+    }
+    
+    func refreshItems()
+    {
+        collectionView.reloadData()
+        collectionView.scrollRectToVisible(
+            scrollingRect,
+            animated:false)
     }
 }

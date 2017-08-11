@@ -6,7 +6,7 @@ extension ViewList
     
     private func modelAtIndex(indexPath:IndexPath) -> ModelListItem
     {
-        let item:ModelListItem = controller.model.items[indexPath.item]
+        let item:ModelListItem = controller.model.displayItems[indexPath.item]
         
         return item
     }
