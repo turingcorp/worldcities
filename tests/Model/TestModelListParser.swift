@@ -47,4 +47,22 @@ class TestModelListParser:XCTestCase
         let json:Any? = modelList?.loadJson(data:data)
         XCTAssertNotNil(json, "failed loading json from data")
     }
+    
+    func testLoadJsonList()
+    {
+        guard
+            
+            let url:URL = ModelList.factoryResourceUrl(),
+            let data:Data = modelList?.loadData(url:url),
+            let json:Any = modelList?.loadJson(data:data)
+            
+        else
+        {
+            return
+        }
+        
+        let jsonList:[AnyObject]? = modelList?.loadJsonList(
+            json:json)
+        XCTAssertNotNil(jsonList, "failed loading json list from json")
+    }
 }
