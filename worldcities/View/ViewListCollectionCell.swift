@@ -60,4 +60,11 @@ class ViewListCollectionCell:UICollectionViewCell
     {
         return nil
     }
+    
+    //MARK: internal
+    
+    func config(model:ModelListItem)
+    {
+        label.text = model.displayString
+    }
 }
