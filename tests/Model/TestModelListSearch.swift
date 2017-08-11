@@ -10,6 +10,8 @@ class TestModelListSearch:XCTestCase
     private let kStringWithReturn:String = "\r"
     private let kStringUpperCaseA:String = "A"
     private let kStringLowerCaseA:String = "a"
+    private let kStringPercent:String = "%"
+    private let kStringAAndPercent:String = "a%"
     private let kWaitExpectation:TimeInterval = 90
     
     func testSearchItems()
@@ -33,6 +35,7 @@ class TestModelListSearch:XCTestCase
             self?.inputUpperCase(modelList:modelList)
             self?.inputLowerCase(modelList:modelList)
             self?.inputEqualsLowerUpper(modelList:modelList)
+            self?.inputInvalidString(modelList:modelList)
         }
     }
     
@@ -127,5 +130,17 @@ class TestModelListSearch:XCTestCase
             countLower,
             countUpper,
             "lower case search should be similar as upper case searcg")
+    }
+    
+    private func inputInvalidString(modelList:ModelList)
+    {
+        let foundItems:[ModelListItem] = modelList.searchItems(
+            forInput:kStringPercent)
+        let foundCount:Int = foundItems.count
+        
+        XCTAssertLessThan(
+            foundCount,
+            1,
+            "search should be empty when looking for special characters")
     }
 }
