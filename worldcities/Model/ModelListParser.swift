@@ -11,6 +11,15 @@ extension ModelList
     private static let kKeyLat:String = "lat"
     private static let kKeyLon:String = "lon"
     
+    class func factoryResourceUrl() -> URL?
+    {
+        let resourceUrl:URL? = Bundle.main.url(
+            forResource:kJsonName,
+            withExtension:kJsonExtension)
+        
+        return resourceUrl
+    }
+    
     func loadItems(completion:@escaping(() -> ()))
     {
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
@@ -20,32 +29,24 @@ extension ModelList
         }
     }
     
-    //MARK: private
-    
-    private func dispatchLoadItems(completion:@escaping(() -> ()))
+    func loadData(url:URL) -> Data?
     {
-        guard
-            
-            let resourceUrl:URL = Bundle.main.url(
-                forResource:ModelList.kJsonName,
-                withExtension:ModelList.kJsonExtension)
-            
-        else
-        {
-            return
-        }
-        
         let data:Data
         
         do
         {
-            try data = Data(contentsOf:resourceUrl)
+            try data = Data(contentsOf:url)
         }
         catch
         {
-            return
+            return nil
         }
         
+        return data
+    }
+    
+    func loadJson(data:Data) -> Any?
+    {
         let json:Any
         
         do
@@ -56,6 +57,24 @@ extension ModelList
                 JSONSerialization.ReadingOptions.allowFragments)
         }
         catch
+        {
+            return nil
+        }
+        
+        return json
+    }
+    
+    //MARK: private
+    
+    private func dispatchLoadItems(completion:@escaping(() -> ()))
+    {
+        guard
+            
+            let url:URL = ModelList.factoryResourceUrl(),
+            let data:Data = loadData(url:url),
+            let json:Any = loadJson(data:data)
+            
+        else
         {
             return
         }
