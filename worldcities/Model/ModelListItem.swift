@@ -2,9 +2,11 @@ import Foundation
 
 class ModelListItem
 {
+    private static let kDisplayConcatenate:String = ", "
     let identifier:Int
     let compareString:String
     let filterString:String
+    let displayString:String
     let name:String
     let country:String
     let latitude:Double
@@ -31,6 +33,17 @@ class ModelListItem
         return compareString
     }
     
+    private class func factoryDisplayString(
+        name:String,
+        country:String) -> String
+    {
+        var displayString:String = name
+        displayString.append(kDisplayConcatenate)
+        displayString.append(country)
+        
+        return displayString
+    }
+    
     init(
         identifier:Int,
         name:String,
@@ -48,6 +61,9 @@ class ModelListItem
             name:name)
         compareString = ModelListItem.factoryCompareString(
             filterString:filterString,
+            country:country)
+        displayString = ModelListItem.factoryDisplayString(
+            name:name,
             country:country)
     }
 }
