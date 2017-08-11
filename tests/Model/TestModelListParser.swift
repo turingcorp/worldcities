@@ -4,7 +4,7 @@ import XCTest
 class TestModelListParser:XCTestCase
 {
     var modelList:ModelList?
-    private let kWaitExpectation:TimeInterval = 600
+    private let kWaitExpectation:TimeInterval = 800
     
     override func setUp()
     {
