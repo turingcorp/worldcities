@@ -153,6 +153,5 @@ class ViewList:
         activityIndicator?.stopAnimating()
         activityIndicator?.removeFromSuperview()
         collectionView.isHidden = false
-        collectionView.reloadData()
     }
 }

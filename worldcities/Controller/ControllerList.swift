@@ -3,7 +3,7 @@ import UIKit
 class ControllerList:UIViewController
 {
     let model:ModelList
-    private weak var viewListBar:ViewListBar!
+    private(set) weak var viewListBar:ViewListBar!
     
     init()
     {
@@ -33,7 +33,10 @@ class ControllerList:UIViewController
         super.viewDidLoad()
         
         model.loadItems
-        {
+        { [weak self] in
+            
+            self?.refreshDisplayItems()
+            
             DispatchQueue.main.async
             { [weak self] in
                 
