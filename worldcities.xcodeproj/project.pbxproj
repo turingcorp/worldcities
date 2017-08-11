@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA119E1B1F3D7B2800FB3ED8 /* ControllerListSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA119E1A1F3D7B2800FB3ED8 /* ControllerListSearch.swift */; };
 		DA952AD01F3CC6BB00698848 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA952ACF1F3CC6BB00698848 /* LaunchScreen.storyboard */; };
 		DA952AD21F3CC75700698848 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952AD11F3CC75700698848 /* AppDelegate.swift */; };
 		DA952AD41F3CC8CF00698848 /* ControllerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA952AD31F3CC8CF00698848 /* ControllerList.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		DA10119B1F3CC4D600489E74 /* worldcities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = worldcities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1011AA1F3CC4D600489E74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA119E1A1F3D7B2800FB3ED8 /* ControllerListSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerListSearch.swift; sourceTree = "<group>"; };
 		DA952ACF1F3CC6BB00698848 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA952AD11F3CC75700698848 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA952AD31F3CC8CF00698848 /* ControllerList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerList.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				DA952AD11F3CC75700698848 /* AppDelegate.swift */,
 				DA952AD51F3CCB0800698848 /* NavigationController.swift */,
 				DA952AD31F3CC8CF00698848 /* ControllerList.swift */,
+				DA119E1A1F3D7B2800FB3ED8 /* ControllerListSearch.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				DA952AD61F3CCB0800698848 /* NavigationController.swift in Sources */,
 				DA952ADA1F3CD65500698848 /* ViewListCollection.swift in Sources */,
 				DA952ADE1F3CDA8900698848 /* ViewListBar.swift in Sources */,
+				DA119E1B1F3D7B2800FB3ED8 /* ControllerListSearch.swift in Sources */,
 				DA952AD41F3CC8CF00698848 /* ControllerList.swift in Sources */,
 				DA952AE51F3CE57300698848 /* ModelList.swift in Sources */,
 			);
@@ -496,6 +500,7 @@
 				DABD69AF1F3D2F590089426C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
