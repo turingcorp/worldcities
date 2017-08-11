@@ -4,6 +4,7 @@ import XCTest
 class TestModelListParser:XCTestCase
 {
     var modelList:ModelList?
+    private let kWaitExpectation:TimeInterval = 20
     
     override func setUp()
     {
@@ -92,6 +93,33 @@ class TestModelListParser:XCTestCase
         let item:ModelListItem? = ModelList.factoryItem(
             jsonItem:firstJsonItem)
         XCTAssertNotNil(item, "failed parsing json item")
+    }
+    
+    func testLoadItems()
+    {
+        let itemsExpectation:XCTestExpectation = expectation(
+            description:"load items")
+        
+        waitForExpectations(timeout:kWaitExpectation)
+        { [weak self] (error:Error?) in
+            
+            let countItems:Int? = self?.modelList?.items.count
+            
+            XCTAssertNotNil(countItems, "failed loading items")
+            
+            if let countItems:Int = countItems
+            {
+                XCTAssertGreaterThan(
+                    countItems,
+                    0,
+                    "item array is empty")
+            }
+        }
+        
+        modelList?.loadItems
+        {
+            itemsExpectation.fulfill()
+        }
     }
     
     func testPerformanceLoadItems()
