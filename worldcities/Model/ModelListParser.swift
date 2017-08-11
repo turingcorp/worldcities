@@ -4,7 +4,6 @@ extension ModelList
 {
     private static let kJsonName:String = "cities"
     private static let kJsonExtension:String = "json"
-    private static let kKeyId:String = "_id"
     private static let kKeyName:String = "name"
     private static let kKeyCountry:String = "country"
     private static let kKeyCoord:String = "coord"
@@ -25,7 +24,6 @@ extension ModelList
         guard
             
             let jsonMap:[String:AnyObject] = jsonItem as? [String:AnyObject],
-            let identifier:Int = jsonMap[kKeyId] as? Int,
             let name:String = jsonMap[kKeyName] as? String,
             let country:String = jsonMap[kKeyCountry] as? String,
             let coord:[String:AnyObject] = jsonMap[kKeyCoord] as? [String:AnyObject],
@@ -38,7 +36,6 @@ extension ModelList
         }
         
         let item:ModelListItem = ModelListItem(
-            identifier:identifier,
             name:name,
             country:country,
             latitude:latitude,
@@ -75,8 +72,8 @@ extension ModelList
         let sorted:[ModelListItem] = items.sorted
         { (itemA:ModelListItem, itemB:ModelListItem) -> Bool in
             
-            let itemAString:String = itemA.compareString
-            let itemBString:String = itemB.compareString
+            let itemAString:String = itemA.comparingString()
+            let itemBString:String = itemB.comparingString()
             let comparison:ComparisonResult = itemAString.compare(
                 itemBString,
                 options:String.CompareOptions.literal)

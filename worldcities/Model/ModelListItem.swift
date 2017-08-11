@@ -3,14 +3,11 @@ import Foundation
 class ModelListItem
 {
     private static let kDisplayConcatenate:String = ", "
-    let identifier:Int
-    let compareString:String
-    let filterString:String
     let displayString:String
-    let name:String
-    let country:String
     let latitude:Double
     let longitude:Double
+    private var compareString:String?
+    private var filterString:String?
     
     private class func factoryFilterString(name:String) -> String
     {
@@ -45,19 +42,12 @@ class ModelListItem
     }
     
     init(
-        identifier:Int,
         name:String,
         country:String,
         latitude:Double,
         longitude:Double)
     {
-        self.identifier = identifier
-        self.name = name
-        self.country = country
-        self.latitude = latitude
-        self.longitude = longitude
-        
-        filterString = ModelListItem.factoryFilterString(
+        let filterString:String = ModelListItem.factoryFilterString(
             name:name)
         compareString = ModelListItem.factoryCompareString(
             filterString:filterString,
@@ -65,5 +55,42 @@ class ModelListItem
         displayString = ModelListItem.factoryDisplayString(
             name:name,
             country:country)
+        
+        self.latitude = latitude
+        self.longitude = longitude
+        self.filterString = filterString
+    }
+    
+    //MARK: internal
+    
+    func filteringString() -> String?
+    {
+        guard
+        
+            let filterString:String = self.filterString
+        
+        else
+        {
+            return nil
+        }
+        
+        self.filterString = nil
+        self.compareString = nil
+        
+        return filterString
+    }
+    
+    func comparingString() -> String
+    {
+        guard
+        
+            let compareString:String = self.compareString
+        
+        else
+        {
+            return ModelListItem.kDisplayConcatenate
+        }
+        
+        return compareString
     }
 }
