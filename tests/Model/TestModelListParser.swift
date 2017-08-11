@@ -93,4 +93,26 @@ class TestModelListParser:XCTestCase
             jsonItem:firstJsonItem)
         XCTAssertNotNil(item, "failed parsing json item")
     }
+    
+    func testPerformanceLoadItems()
+    {
+        guard
+            
+            let url:URL = ModelList.factoryResourceUrl(),
+            let data:Data = modelList?.loadData(url:url),
+            let json:Any = modelList?.loadJson(data:data),
+            let jsonList:[AnyObject] = modelList?.loadJsonList(
+                json:json)
+            
+        else
+        {
+            return
+        }
+        
+        measure
+        { [weak self] in
+            
+            let _:[ModelListItem]? = self?.modelList?.loadItems(jsonList:jsonList)
+        }
+    }
 }
