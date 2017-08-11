@@ -5,6 +5,7 @@ class ViewMap:MKMapView
 {
     private weak var controller:ControllerMap!
     private weak var annotation:ModelMapAnnotation?
+    private let kSpanSize:CLLocationDegrees = 0.5
     
     init(controller:ControllerMap)
     {
@@ -31,30 +32,43 @@ class ViewMap:MKMapView
     
     //MARK: private
     
+    private func factoryAnnotation()
+    {
+        let model:ModelListItem = controller.model
+        let annotation:ModelMapAnnotation = ModelMapAnnotation(
+            modelListItem:model)
+        self.annotation = annotation
+        
+        addAnnotation(annotation)
+    }
+    
     private func centerOnAnnotation()
     {
+        guard
+            
+            let coordinate:CLLocationCoordinate2D = annotation?.coordinate
+            
+        else
+        {
+            return
+        }
         
+        let span:MKCoordinateSpan = MKCoordinateSpan(
+            latitudeDelta:kSpanSize,
+            longitudeDelta:kSpanSize)
+        let region:MKCoordinateRegion = MKCoordinateRegionMake(
+            coordinate,
+            span)
+        setRegion(region, animated:true)
     }
     
     //MARK: internal
     
     func viewDidAppear()
     {
-        guard
-            
-            let annotation:ModelMapAnnotation = self.annotation
-        
-        else
+        if annotation == nil
         {
-            let model:ModelListItem = controller.model
-            let annotation:ModelMapAnnotation = ModelMapAnnotation(
-                modelListItem:model)
-            self.annotation = annotation
-            
-            addAnnotation(annotation)
-            centerOnAnnotation()
-            
-            return
+            factoryAnnotation()
         }
         
         centerOnAnnotation()
