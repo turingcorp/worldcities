@@ -32,6 +32,7 @@ class TestModelListSearch:XCTestCase
             self?.inputReturn(modelList:modelList)
             self?.inputUpperCase(modelList:modelList)
             self?.inputLowerCase(modelList:modelList)
+            self?.inputEqualsLowerUpper(modelList:modelList)
         }
     }
     
@@ -111,5 +112,20 @@ class TestModelListSearch:XCTestCase
             foundCount,
             0,
             "failed searching with lower case strings")
+    }
+    
+    private func inputEqualsLowerUpper(modelList:ModelList)
+    {
+        let foundLower:[ModelListItem] = modelList.searchItems(
+            forInput:kStringLowerCaseA)
+        let foundUpper:[ModelListItem] = modelList.searchItems(
+            forInput:kStringUpperCaseA)
+        let countLower:Int = foundLower.count
+        let countUpper:Int = foundUpper.count
+        
+        XCTAssertEqual(
+            countLower,
+            countUpper,
+            "lower case search should be similar as upper case searcg")
     }
 }
