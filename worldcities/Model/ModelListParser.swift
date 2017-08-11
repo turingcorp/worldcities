@@ -25,7 +25,7 @@ extension ModelList
         guard
             
             let jsonMap:[String:AnyObject] = jsonItem as? [String:AnyObject],
-            let identifier:String = jsonMap[kKeyId] as? String,
+            let identifier:Int = jsonMap[kKeyId] as? Int,
             let name:String = jsonMap[kKeyName] as? String,
             let country:String = jsonMap[kKeyCountry] as? String,
             let coord:[String:AnyObject] = jsonMap[kKeyCoord] as? [String:AnyObject],

@@ -2,14 +2,14 @@ import Foundation
 
 class ModelListItem
 {
-    let identifier:String
+    let identifier:Int
     let name:String
     let country:String
     let latitude:Double
     let longitude:Double
     
     init(
-        identifier:String,
+        identifier:Int,
         name:String,
         country:String,
         latitude:Double,
