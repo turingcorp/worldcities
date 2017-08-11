@@ -12,6 +12,7 @@ class TestModelListSearch:XCTestCase
     private let kStringLowerCaseA:String = "a"
     private let kStringPercent:String = "%"
     private let kStringAAndPercent:String = "a%"
+    private let kStringAmsterdam:String = "amsterdam"
     private let kWaitExpectation:TimeInterval = 90
     
     func testSearchItems()
@@ -38,6 +39,7 @@ class TestModelListSearch:XCTestCase
             self?.inputInvalidString(modelList:modelList)
             self?.inputValidAndInvalid(modelList:modelList)
             self?.resultsSorted(modelList:modelList)
+            self?.searchSpecificCity(modelList:modelList)
         }
     }
     
@@ -175,6 +177,28 @@ class TestModelListSearch:XCTestCase
                 comparison,
                 ComparisonResult.orderedDescending,
                 "results are not sorted")
+        }
+    }
+    
+    private func searchSpecificCity(modelList:ModelList)
+    {
+        let foundItems:[ModelListItem] = modelList.searchItems(
+            forInput:kStringAmsterdam)
+        let foundCount:Int = foundItems.count
+        
+        XCTAssertGreaterThan(
+            foundCount,
+            0,
+            "failed looking for a specific city")
+        
+        for item:ModelListItem in foundItems
+        {
+            let displayString:String = item.displayString.lowercased()
+            let containsAmsterdam:Bool = displayString.contains(kStringAmsterdam)
+            
+            XCTAssertTrue(
+                containsAmsterdam,
+                "failed looking for specific city")
         }
     }
 }
