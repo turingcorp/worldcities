@@ -46,4 +46,13 @@ extension ControllerList:UISearchBarDelegate
             self?.asyncUpdateDisplayItems()
         }
     }
+    
+    //MARK: searchBar delegate
+    
+    func searchBar(
+        _ searchBar:UISearchBar,
+        textDidChange searchText:String)
+    {
+        refreshDisplayItems()
+    }
 }
