@@ -6,18 +6,17 @@ class ViewList:
     UICollectionViewDataSource,
     UICollectionViewDelegateFlowLayout
 {
-    var cellSize:CGSize?
-    let kCellHeight:CGFloat = 50
-    private weak var activityIndicator:UIActivityIndicatorView?
     private(set) weak var collectionView:UICollectionView!
     private(set) weak var controller:ControllerList!
-    private let kCellSeparation:CGFloat = 1
+    private weak var viewListFlow:ViewListFlow!
+    private weak var activityIndicator:UIActivityIndicatorView?
+    private let kCellHeight:CGFloat = 50
     
     init(controller:ControllerList)
     {
         super.init(frame:CGRect.zero)
         clipsToBounds = true
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor(white:0.95, alpha:1)
         self.controller = controller
         
         factoryViews()
@@ -30,8 +29,13 @@ class ViewList:
     
     override func layoutSubviews()
     {
-        cellSize = nil
-        collectionView.collectionViewLayout.invalidateLayout()
+        let width:CGFloat = bounds.width
+        let cellSize:CGSize = CGSize(
+            width:width,
+            height:kCellHeight)
+        
+        viewListFlow.itemSize = cellSize
+        viewListFlow.invalidateLayout()
         super.layoutSubviews()
     }
     
@@ -45,21 +49,12 @@ class ViewList:
         activityIndicator.startAnimating()
         self.activityIndicator = activityIndicator
         
-        let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        flow.scrollDirection = UICollectionViewScrollDirection.vertical
-        flow.headerReferenceSize = CGSize.zero
-        flow.footerReferenceSize = CGSize.zero
-        flow.minimumLineSpacing = kCellSeparation
-        flow.minimumInteritemSpacing = kCellSeparation
-        flow.sectionInset = UIEdgeInsets(
-            top:kCellSeparation,
-            left:0,
-            bottom:kCellSeparation,
-            right:0)
+        let viewListFlow:ViewListFlow = ViewListFlow()
+        self.viewListFlow = viewListFlow
         
         let collectionView:UICollectionView = UICollectionView(
             frame:CGRect.zero,
-            collectionViewLayout:flow)
+            collectionViewLayout:viewListFlow)
         collectionView.isHidden = true
         collectionView.clipsToBounds = true
         collectionView.translatesAutoresizingMaskIntoConstraints = false

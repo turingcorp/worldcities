@@ -12,6 +12,7 @@ class ViewListCollectionCell:UICollectionViewCell
         super.init(frame:CGRect.zero)
         clipsToBounds = true
         factoryLabel()
+        displayState()
     }
     
     required init?(coder:NSCoder)
@@ -44,6 +45,7 @@ class ViewListCollectionCell:UICollectionViewCell
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor.clear
         label.font = UIFont.systemFont(ofSize:kFontSize)
+        label.numberOfLines = 0
         self.label = label
         
         addSubview(label)
@@ -87,11 +89,11 @@ class ViewListCollectionCell:UICollectionViewCell
         if isSelected || isHighlighted
         {
             label.textColor = UIColor.white
-            backgroundColor = UIColor.blue
+            backgroundColor = UIColor(red:0.4, green:0.6, blue:0.9, alpha:1)
         }
         else
         {
-            label.textColor = UIColor.black
+            label.textColor = UIColor(white:0.1, alpha:1)
             backgroundColor = UIColor.white
         }
     }
@@ -101,6 +103,5 @@ class ViewListCollectionCell:UICollectionViewCell
     func config(model:ModelListItem)
     {
         label.text = model.displayString
-        displayState()
     }
 }

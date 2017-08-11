@@ -13,29 +13,6 @@ extension ViewList
     
     //MARK: internal
     
-    func collectionView(
-        _ collectionView:UICollectionView,
-        layout collectionViewLayout:UICollectionViewLayout,
-        sizeForItemAt indexPath:IndexPath) -> CGSize
-    {
-        guard
-        
-            let cellSize:CGSize = self.cellSize
-        
-        else
-        {
-            let width:CGFloat = collectionView.bounds.width
-            let cellSize:CGSize = CGSize(
-                width:width,
-                height:kCellHeight)
-            self.cellSize = cellSize
-            
-            return cellSize
-        }
-        
-        return cellSize
-    }
-    
     func numberOfSections(
         in collectionView:UICollectionView) -> Int
     {

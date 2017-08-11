@@ -31,6 +31,9 @@ class ControllerList:UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        edgesForExtendedLayout = UIRectEdge()
+        extendedLayoutIncludesOpaqueBars = false
+        automaticallyAdjustsScrollViewInsets = false
         
         model.loadItems
         { [weak self] in
