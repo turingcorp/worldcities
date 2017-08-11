@@ -76,6 +76,8 @@ class ControllerList:UIViewController
     
     func openMap(item:ModelListItem)
     {
+        UIApplication.shared.keyWindow?.endEditing(true)
+        
         let controllerMap:ControllerMap = ControllerMap(model:item)
         navigationController?.pushViewController(
             controllerMap,
