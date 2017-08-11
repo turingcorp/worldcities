@@ -12,6 +12,7 @@ class ControllerList:UIViewController
         super.init(nibName:nil, bundle:nil)
         
         let viewListBar:ViewListBar = ViewListBar()
+        viewListBar.delegate = self
         self.viewListBar = viewListBar
         navigationItem.titleView = viewListBar
     }
