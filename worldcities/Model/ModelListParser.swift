@@ -72,8 +72,8 @@ extension ModelList
         let sorted:[ModelListItem] = items.sorted
         { (itemA:ModelListItem, itemB:ModelListItem) -> Bool in
             
-            let itemAString:String = itemA.comparingString()
-            let itemBString:String = itemB.comparingString()
+            let itemAString:String = itemA.compareString
+            let itemBString:String = itemB.compareString
             let comparison:ComparisonResult = itemAString.compare(
                 itemBString,
                 options:String.CompareOptions.literal)

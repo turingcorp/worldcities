@@ -24,15 +24,7 @@ extension ModelList
         itemsMap:inout[String:[ModelListItem]],
         item:ModelListItem)
     {
-        guard
-            
-            let filterString:String = item.filteringString()
-        
-        else
-        {
-            return
-        }
-        
+        let filterString:String = item.filterString
         let characters:String.CharacterView = filterString.characters
         let countCharacters:Int = characters.count
         
