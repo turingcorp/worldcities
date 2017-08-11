@@ -4,7 +4,7 @@ import XCTest
 class TestModelListParser:XCTestCase
 {
     var modelList:ModelList?
-    private let kWaitExpectation:TimeInterval = 60
+    private let kWaitExpectation:TimeInterval = 90
     
     override func setUp()
     {
@@ -150,11 +150,12 @@ class TestModelListParser:XCTestCase
             {
                 if let previousItem:ModelListItem = previousItem
                 {
-                    let previousCompareString:String = previousItem.compareString
+                    let previousString:String = previousItem.compareString
                     let compareString:String = item.compareString
                     
-                    let comparison:ComparisonResult = compareString.compare(
-                        previousCompareString)
+                    let comparison:ComparisonResult = previousString.compare(
+                        compareString,
+                        options:String.CompareOptions.literal)
                     
                     XCTAssertNotEqual(
                         comparison,
@@ -169,7 +170,6 @@ class TestModelListParser:XCTestCase
                 
                 previousItem = item
             }
-            
         }
     }
     
