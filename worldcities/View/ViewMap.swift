@@ -3,7 +3,8 @@ import MapKit
 
 class ViewMap:MKMapView
 {
-    private(set) weak var controller:ControllerMap!
+    private weak var controller:ControllerMap!
+    private weak var annotation:ModelMapAnnotation?
     
     init(controller:ControllerMap)
     {
@@ -28,21 +29,34 @@ class ViewMap:MKMapView
         return nil
     }
     
+    //MARK: private
+    
+    private func centerOnAnnotation()
+    {
+        
+    }
+    
     //MARK: internal
     
     func viewDidAppear()
     {
-        let model:ModelListItem = controller.model
-        let latitude:Double = model.latitude
-        let longitude:Double = model.longitude
-        let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2D(
-            latitude:latitude,
-            longitude:longitude)
+        guard
+            
+            let annotation:ModelMapAnnotation = self.annotation
         
-        let annotation:MKPointAnnotation = MKPointAnnotation()
-        annotation.title = model.displayString
-        annotation.coordinate = coordinate
+        else
+        {
+            let model:ModelListItem = controller.model
+            let annotation:ModelMapAnnotation = ModelMapAnnotation(
+                modelListItem:model)
+            self.annotation = annotation
+            
+            addAnnotation(annotation)
+            centerOnAnnotation()
+            
+            return
+        }
         
-        addAnnotation(annotation)
+        centerOnAnnotation()
     }
 }
