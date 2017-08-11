@@ -98,7 +98,7 @@ class TestModelListParser:XCTestCase
     func testLoadItems()
     {
         let itemsExpectation:XCTestExpectation = expectation(
-            description:"load items")
+            description:"items loaded")
         
         modelList?.loadItems
         {
@@ -119,6 +119,57 @@ class TestModelListParser:XCTestCase
                     0,
                     "item array is empty")
             }
+        }
+    }
+    
+    func testItemsSorted()
+    {
+        let itemsExpectation:XCTestExpectation = expectation(
+            description:"items loaded")
+        
+        modelList?.loadItems
+        {
+            itemsExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout:kWaitExpectation)
+        { [weak self] (error:Error?) in
+            
+            guard
+                
+                let items:[ModelListItem] = self?.modelList?.items
+                
+            else
+            {
+                return
+            }
+            
+            var previousItem:ModelListItem?
+            
+            for item:ModelListItem in items
+            {
+                if let previousItem:ModelListItem = previousItem
+                {
+                    let previousCompareString:String = previousItem.compareString
+                    let compareString:String = item.compareString
+                    
+                    let comparison:ComparisonResult = compareString.compare(
+                        previousCompareString)
+                    
+                    XCTAssertNotEqual(
+                        comparison,
+                        ComparisonResult.orderedDescending,
+                        "failed sorting items")
+                    
+                    if comparison == ComparisonResult.orderedDescending
+                    {
+                        break
+                    }
+                }
+                
+                previousItem = item
+            }
+            
         }
     }
     
