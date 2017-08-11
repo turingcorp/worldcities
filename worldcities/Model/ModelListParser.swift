@@ -49,7 +49,7 @@ extension ModelList
     
     //MARK: private
     
-    private func dispatchLoadItems(completion:@escaping(() -> ()))
+    private func asyncLoadItems(completion:@escaping(() -> ()))
     {
         guard
             
@@ -63,7 +63,10 @@ extension ModelList
             return
         }
         
-        loadItems(jsonList:jsonList, completion:completion)
+        let items:[ModelListItem] = loadItems(jsonList:jsonList)
+        itemsLoaded(items:items)
+        
+        completion()
     }
     
     //MARK: internal
@@ -73,7 +76,7 @@ extension ModelList
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         { [weak self] in
             
-            self?.dispatchLoadItems(completion:completion)
+            self?.asyncLoadItems(completion:completion)
         }
     }
     
@@ -126,9 +129,7 @@ extension ModelList
         return jsonList
     }
     
-    func loadItems(
-        jsonList:[AnyObject],
-        completion:@escaping(() -> ()))
+    func loadItems(jsonList:[AnyObject]) -> [ModelListItem]
     {
         var items:[ModelListItem] = []
         
@@ -147,7 +148,6 @@ extension ModelList
             items.append(item)
         }
         
-        itemsLoaded(items:items)
-        completion()
+        return items
     }
 }
