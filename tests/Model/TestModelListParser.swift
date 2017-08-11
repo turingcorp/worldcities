@@ -4,7 +4,7 @@ import XCTest
 class TestModelListParser:XCTestCase
 {
     var modelList:ModelList?
-    private let kWaitExpectation:TimeInterval = 20
+    private let kWaitExpectation:TimeInterval = 60
     
     override func setUp()
     {
@@ -100,6 +100,11 @@ class TestModelListParser:XCTestCase
         let itemsExpectation:XCTestExpectation = expectation(
             description:"load items")
         
+        modelList?.loadItems
+        {
+            itemsExpectation.fulfill()
+        }
+        
         waitForExpectations(timeout:kWaitExpectation)
         { [weak self] (error:Error?) in
             
@@ -114,11 +119,6 @@ class TestModelListParser:XCTestCase
                     0,
                     "item array is empty")
             }
-        }
-        
-        modelList?.loadItems
-        {
-            itemsExpectation.fulfill()
         }
     }
     
