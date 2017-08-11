@@ -11,7 +11,6 @@ class ViewListCollectionCell:UICollectionViewCell
     {
         super.init(frame:CGRect.zero)
         clipsToBounds = true
-        backgroundColor = UIColor.white
         
         let label:UILabel = UILabel()
         label.isUserInteractionEnabled = false
@@ -61,10 +60,43 @@ class ViewListCollectionCell:UICollectionViewCell
         return nil
     }
     
+    override var isSelected:Bool
+    {
+        didSet
+        {
+            displayState()
+        }
+    }
+    
+    override var isHighlighted:Bool
+    {
+        didSet
+        {
+            displayState()
+        }
+    }
+    
+    //MARK: private
+    
+    private func displayState()
+    {
+        if isSelected || isHighlighted
+        {
+            label.textColor = UIColor.white
+            backgroundColor = UIColor.blue
+        }
+        else
+        {
+            label.textColor = UIColor.black
+            backgroundColor = UIColor.white
+        }
+    }
+    
     //MARK: internal
     
     func config(model:ModelListItem)
     {
         label.text = model.displayString
+        displayState()
     }
 }
