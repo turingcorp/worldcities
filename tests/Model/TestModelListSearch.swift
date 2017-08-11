@@ -7,6 +7,7 @@ class TestModelListSearch:XCTestCase
     private let kStringWithSpaces:String = "   "
     private let kStringWithNewLine:String = "\n"
     private let kStringWithTab:String = "\t"
+    private let kStringWithReturn:String = "\r"
     private let kWaitExpectation:TimeInterval = 90
     
     func testSearchItems()
@@ -26,6 +27,7 @@ class TestModelListSearch:XCTestCase
             self?.inputEmpty(modelList:modelList)
             self?.inputSpaces(modelList:modelList)
             self?.inputTab(modelList:modelList)
+            self?.inputReturn(modelList:modelList)
         }
     }
     
@@ -68,5 +70,18 @@ class TestModelListSearch:XCTestCase
             foundCount,
             totalCount,
             "failed searching with tab on input")
+    }
+    
+    private func inputReturn(modelList:ModelList)
+    {
+        let foundItems:[ModelListItem] = modelList.searchItems(
+            forInput:kStringWithReturn)
+        let foundCount:Int = foundItems.count
+        let totalCount:Int = modelList.items.count
+        
+        XCTAssertEqual(
+            foundCount,
+            totalCount,
+            "failed searching with carriage return on input")
     }
 }
