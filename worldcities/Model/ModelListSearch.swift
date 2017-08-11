@@ -5,8 +5,19 @@ extension ModelList
     func searchItems(forInput:String) -> [ModelListItem]
     {
         let cleanedInput:String = cleanInput(input:forInput)
+        let countCharacters:Int = cleanedInput.characters.count
+        let items:[ModelListItem]
         
-        return []
+        if countCharacters > 0
+        {
+            items = []
+        }
+        else
+        {
+            items = self.items
+        }
+        
+        return items
     }
     
     //MARK: private
