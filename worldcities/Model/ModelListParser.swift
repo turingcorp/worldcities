@@ -64,9 +64,32 @@ extension ModelList
         }
         
         let items:[ModelListItem] = loadItems(jsonList:jsonList)
-        itemsLoaded(items:items)
+        let sortedItems:[ModelListItem] = sortItems(items:items)
+        itemsLoaded(items:sortedItems)
         
         completion()
+    }
+    
+    private func sortItems(items:[ModelListItem]) -> [ModelListItem]
+    {
+        let sorted:[ModelListItem] = items.sorted
+        { (itemA:ModelListItem, itemB:ModelListItem) -> Bool in
+            
+            let itemAString:String = itemA.compareString
+            let itemBString:String = itemB.compareString
+            let comparison:ComparisonResult = itemAString.compare(
+                itemBString,
+                options:String.CompareOptions.literal)
+            
+            if comparison == ComparisonResult.orderedDescending
+            {
+                return false
+            }
+            
+            return true
+        }
+        
+        return sorted
     }
     
     //MARK: internal
