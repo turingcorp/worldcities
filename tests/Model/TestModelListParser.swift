@@ -64,5 +64,12 @@ class TestModelListParser:XCTestCase
         let jsonList:[AnyObject]? = modelList?.loadJsonList(
             json:json)
         XCTAssertNotNil(jsonList, "failed loading json list from json")
+        
+        if let jsonList:[AnyObject] = jsonList
+        {
+            let countItems:Int = jsonList.count
+            
+            XCTAssertGreaterThan(countItems, 0, "list is empty")
+        }
     }
 }
