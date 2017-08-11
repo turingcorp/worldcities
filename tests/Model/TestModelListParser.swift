@@ -72,4 +72,25 @@ class TestModelListParser:XCTestCase
             XCTAssertGreaterThan(countItems, 0, "list is empty")
         }
     }
+    
+    func testFactoryItem()
+    {
+        guard
+            
+            let url:URL = ModelList.factoryResourceUrl(),
+            let data:Data = modelList?.loadData(url:url),
+            let json:Any = modelList?.loadJson(data:data),
+            let jsonList:[AnyObject] = modelList?.loadJsonList(
+                json:json),
+            let firstJsonItem:AnyObject = jsonList.first
+            
+        else
+        {
+            return
+        }
+        
+        let item:ModelListItem? = ModelList.factoryItem(
+            jsonItem:firstJsonItem)
+        XCTAssertNotNil(item, "failed parsing json item")
+    }
 }
