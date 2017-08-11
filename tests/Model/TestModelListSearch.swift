@@ -39,6 +39,7 @@ class TestModelListSearch:XCTestCase
             self?.inputInvalidString(modelList:modelList)
             self?.inputValidAndInvalid(modelList:modelList)
             self?.resultsSorted(modelList:modelList)
+            self?.resultsAreValid(modelList:modelList)
             self?.searchSpecificCity(modelList:modelList)
         }
     }
@@ -177,6 +178,24 @@ class TestModelListSearch:XCTestCase
                 comparison,
                 ComparisonResult.orderedDescending,
                 "results are not sorted")
+        }
+    }
+    
+    private func resultsAreValid(modelList:ModelList)
+    {
+        let foundItems:[ModelListItem] = modelList.searchItems(
+            forInput:kStringLowerCaseA)
+        
+        for item:ModelListItem in foundItems
+        {
+            let displayString:String = item.displayString
+            let firstLetter:String = String(
+                displayString[displayString.startIndex]).lowercased()
+            
+            XCTAssertEqual(
+                firstLetter,
+                kStringLowerCaseA,
+                "search results are not similar to query")
         }
     }
     
