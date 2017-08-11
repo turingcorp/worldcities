@@ -2,6 +2,17 @@ import UIKit
 
 extension ViewList
 {
+    //MARK: private
+    
+    private func modelAtIndex(indexPath:IndexPath) -> ModelListItem
+    {
+        let item:ModelListItem = controller.model.items[indexPath.item]
+        
+        return item
+    }
+    
+    //MARK: internal
+    
     func collectionView(
         _ collectionView:UICollectionView,
         layout collectionViewLayout:UICollectionViewLayout,
@@ -44,6 +55,14 @@ extension ViewList
         _ collectionView:UICollectionView,
         cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
-        return UICollectionViewCell()
+        let item:ModelListItem = modelAtIndex(indexPath:indexPath)
+        
+        let cell:ViewListCollectionCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier:
+            ViewListCollectionCell.reusableIdentifier,
+            for:indexPath) as! ViewListCollectionCell
+        cell.config(model:item)
+        
+        return cell
     }
 }
