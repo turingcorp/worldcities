@@ -2,7 +2,7 @@ import UIKit
 
 extension ControllerList:UISearchBarDelegate
 {
-    private func asyncUpdateDisplayItems()
+    private func asyncRefreshDisplayItems()
     {
         guard
         
@@ -43,7 +43,7 @@ extension ControllerList:UISearchBarDelegate
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         { [weak self] in
             
-            self?.asyncUpdateDisplayItems()
+            self?.asyncRefreshDisplayItems()
         }
     }
     
@@ -53,6 +53,28 @@ extension ControllerList:UISearchBarDelegate
         _ searchBar:UISearchBar,
         textDidChange searchText:String)
     {
+        refreshDisplayItems()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar:UISearchBar)
+    {
+        searchBar.setShowsCancelButton(true, animated:true)
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar:UISearchBar)
+    {
+        searchBar.setShowsCancelButton(false, animated:true)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar:UISearchBar)
+    {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar:UISearchBar)
+    {
+        searchBar.resignFirstResponder()
+        searchBar.text = kEmptyString
         refreshDisplayItems()
     }
 }

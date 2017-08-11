@@ -3,6 +3,7 @@ import UIKit
 class ControllerList:UIViewController
 {
     let model:ModelList
+    let kEmptyString:String = ""
     private(set) weak var viewListBar:ViewListBar!
     
     init()
@@ -65,6 +66,7 @@ class ControllerList:UIViewController
         title = nil
         
         let viewListBar:ViewListBar = ViewListBar()
+        viewListBar.text = kEmptyString
         viewListBar.delegate = self
         self.viewListBar = viewListBar
         navigationItem.titleView = viewListBar
