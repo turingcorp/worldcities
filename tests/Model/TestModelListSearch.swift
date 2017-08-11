@@ -8,6 +8,7 @@ class TestModelListSearch:XCTestCase
     private let kStringWithNewLine:String = "\n"
     private let kStringWithTab:String = "\t"
     private let kStringWithReturn:String = "\r"
+    private let kStringUpperCaseA:String = "A"
     private let kWaitExpectation:TimeInterval = 90
     
     func testSearchItems()
@@ -28,6 +29,7 @@ class TestModelListSearch:XCTestCase
             self?.inputSpaces(modelList:modelList)
             self?.inputTab(modelList:modelList)
             self?.inputReturn(modelList:modelList)
+            self?.inputUpperCase(modelList:modelList)
         }
     }
     
@@ -83,5 +85,17 @@ class TestModelListSearch:XCTestCase
             foundCount,
             totalCount,
             "failed searching with carriage return on input")
+    }
+    
+    private func inputUpperCase(modelList:ModelList)
+    {
+        let foundItems:[ModelListItem] = modelList.searchItems(
+            forInput:kStringUpperCaseA)
+        let foundCount:Int = foundItems.count
+        
+        XCTAssertGreaterThan(
+            foundCount,
+            0,
+            "failed searching with upper case strings")
     }
 }
