@@ -16,4 +16,10 @@ class ControllerMap:UIViewController
     {
         return nil
     }
+    
+    override func loadView()
+    {
+        let view:ViewMap = ViewMap(controller:self)
+        self.view = view
+    }
 }
