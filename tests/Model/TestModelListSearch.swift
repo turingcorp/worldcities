@@ -13,7 +13,7 @@ class TestModelListSearch:XCTestCase
     private let kStringPercent:String = "%"
     private let kStringAAndPercent:String = "a%"
     private let kStringAmsterdam:String = "amsterdam"
-    private let kWaitExpectation:TimeInterval = 90
+    private let kWaitExpectation:TimeInterval = 600
     
     func testSearchItems()
     {
