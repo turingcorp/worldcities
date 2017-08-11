@@ -9,6 +9,7 @@ class TestModelListSearch:XCTestCase
     private let kStringWithTab:String = "\t"
     private let kStringWithReturn:String = "\r"
     private let kStringUpperCaseA:String = "A"
+    private let kStringLowerCaseA:String = "a"
     private let kWaitExpectation:TimeInterval = 90
     
     func testSearchItems()
@@ -30,6 +31,7 @@ class TestModelListSearch:XCTestCase
             self?.inputTab(modelList:modelList)
             self?.inputReturn(modelList:modelList)
             self?.inputUpperCase(modelList:modelList)
+            self?.inputLowerCase(modelList:modelList)
         }
     }
     
@@ -97,5 +99,17 @@ class TestModelListSearch:XCTestCase
             foundCount,
             0,
             "failed searching with upper case strings")
+    }
+    
+    private func inputLowerCase(modelList:ModelList)
+    {
+        let foundItems:[ModelListItem] = modelList.searchItems(
+            forInput:kStringLowerCaseA)
+        let foundCount:Int = foundItems.count
+        
+        XCTAssertGreaterThan(
+            foundCount,
+            0,
+            "failed searching with lower case strings")
     }
 }
