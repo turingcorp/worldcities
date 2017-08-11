@@ -4,6 +4,7 @@ import XCTest
 class TestModelListSearch:XCTestCase
 {
     private let kStringEmpty:String = ""
+    private let kStringWithSpaces:String = "   "
     private let kWaitExpectation:TimeInterval = 90
     
     func testSearchItems()
@@ -37,5 +38,18 @@ class TestModelListSearch:XCTestCase
             foundCount,
             totalCount,
             "failed searching with empty string")
+    }
+    
+    private func inputSpaces(modelList:ModelList)
+    {
+        let foundItems:[ModelListItem] = modelList.searchItems(
+            forInput:kStringWithSpaces)
+        let foundCount:Int = foundItems.count
+        let totalCount:Int = modelList.items.count
+        
+        XCTAssertEqual(
+            foundCount,
+            totalCount,
+            "failed searching with spaces on input")
     }
 }
