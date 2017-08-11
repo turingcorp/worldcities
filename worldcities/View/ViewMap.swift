@@ -8,6 +8,18 @@ class ViewMap:MKMapView
     init(controller:ControllerMap)
     {
         super.init(frame:CGRect.zero)
+        clipsToBounds = true
+        isRotateEnabled = false
+        isScrollEnabled = true
+        isZoomEnabled = true
+        isPitchEnabled = false
+        mapType = MKMapType.standard
+        showsBuildings = true
+        showsPointsOfInterest = true
+        showsCompass = true
+        showsScale = false
+        showsTraffic = false
+        showsUserLocation = false
         self.controller = controller
     }
     
