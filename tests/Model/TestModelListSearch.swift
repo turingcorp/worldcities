@@ -36,6 +36,7 @@ class TestModelListSearch:XCTestCase
             self?.inputLowerCase(modelList:modelList)
             self?.inputEqualsLowerUpper(modelList:modelList)
             self?.inputInvalidString(modelList:modelList)
+            self?.inputValidAndInvalid(modelList:modelList)
         }
     }
     
@@ -136,6 +137,18 @@ class TestModelListSearch:XCTestCase
     {
         let foundItems:[ModelListItem] = modelList.searchItems(
             forInput:kStringPercent)
+        let foundCount:Int = foundItems.count
+        
+        XCTAssertLessThan(
+            foundCount,
+            1,
+            "search should be empty when looking for special characters")
+    }
+    
+    private func inputValidAndInvalid(modelList:ModelList)
+    {
+        let foundItems:[ModelListItem] = modelList.searchItems(
+            forInput:kStringAAndPercent)
         let foundCount:Int = foundItems.count
         
         XCTAssertLessThan(
