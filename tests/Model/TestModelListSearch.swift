@@ -130,7 +130,7 @@ class TestModelListSearch:XCTestCase
         XCTAssertEqual(
             countLower,
             countUpper,
-            "lower case search should be similar as upper case searcg")
+            "lower case search should be similar as upper case search")
     }
     
     private func inputInvalidString(modelList:ModelList)
