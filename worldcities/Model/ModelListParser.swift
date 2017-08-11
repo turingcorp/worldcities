@@ -66,31 +66,6 @@ extension ModelList
         loadItems(jsonList:jsonList, completion:completion)
     }
     
-    private func loadItems(
-        jsonList:[AnyObject],
-        completion:@escaping(() -> ()))
-    {
-        var items:[ModelListItem] = []
-        
-        for jsonItem:AnyObject in jsonList
-        {
-            guard
-            
-                let item:ModelListItem = ModelList.factoryItem(
-                    jsonItem:jsonItem)
-            
-            else
-            {
-                continue
-            }
-            
-            items.append(item)
-        }
-        
-        itemsLoaded(items:items)
-        completion()
-    }
-    
     //MARK: internal
     
     func loadItems(completion:@escaping(() -> ()))
@@ -149,5 +124,30 @@ extension ModelList
         }
         
         return jsonList
+    }
+    
+    func loadItems(
+        jsonList:[AnyObject],
+        completion:@escaping(() -> ()))
+    {
+        var items:[ModelListItem] = []
+        
+        for jsonItem:AnyObject in jsonList
+        {
+            guard
+                
+                let item:ModelListItem = ModelList.factoryItem(
+                    jsonItem:jsonItem)
+                
+            else
+            {
+                continue
+            }
+            
+            items.append(item)
+        }
+        
+        itemsLoaded(items:items)
+        completion()
     }
 }
