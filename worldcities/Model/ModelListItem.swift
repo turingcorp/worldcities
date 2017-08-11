@@ -23,12 +23,16 @@ class ModelListItem
         self.latitude = latitude
         self.longitude = longitude
         
-        let nameLowercase:String = name.lowercased()
+        var nameLowercase:String = name.lowercased()
+        nameLowercase = nameLowercase.replacingOccurrences(
+            of:" ",
+            with:"")
+        
         let countryLowercase:String = country.lowercased()
+        filterString = nameLowercase
         
         var compareString = nameLowercase
         compareString.append(countryLowercase)
         self.compareString = compareString
-        filterString = nameLowercase
     }
 }
