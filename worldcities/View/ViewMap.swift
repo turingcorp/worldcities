@@ -27,4 +27,22 @@ class ViewMap:MKMapView
     {
         return nil
     }
+    
+    //MARK: internal
+    
+    func viewDidAppear()
+    {
+        let model:ModelListItem = controller.model
+        let latitude:Double = model.latitude
+        let longitude:Double = model.longitude
+        let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2D(
+            latitude:latitude,
+            longitude:longitude)
+        
+        let annotation:MKPointAnnotation = MKPointAnnotation()
+        annotation.title = model.displayString
+        annotation.coordinate = coordinate
+        
+        addAnnotation(annotation)
+    }
 }
