@@ -65,7 +65,7 @@ extension ModelList
         
         let items:[ModelListItem] = loadItems(jsonList:jsonList)
         let sortedItems:[ModelListItem] = sortItems(items:items)
-        itemsLoaded(items:sortedItems)
+        mapItems(items:sortedItems)
         
         completion()
     }

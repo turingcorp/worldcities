@@ -128,8 +128,8 @@
 			children = (
 				DA952AE41F3CE57300698848 /* ModelList.swift */,
 				DA952AE81F3CE7CE00698848 /* ModelListParser.swift */,
-				DA119E1C1F3D7C5900FB3ED8 /* ModelListSearch.swift */,
 				DA119E221F3D9CE900FB3ED8 /* ModelListMapper.swift */,
+				DA119E1C1F3D7C5900FB3ED8 /* ModelListSearch.swift */,
 				DA952AE61F3CE5AB00698848 /* ModelListItem.swift */,
 			);
 			path = Model;
