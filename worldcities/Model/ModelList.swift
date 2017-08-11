@@ -2,7 +2,7 @@ import Foundation
 
 class ModelList
 {
-    private(set) var itemsMap:[String:ModelListItem]
+    private(set) var itemsMap:[String:[ModelListItem]]
     private(set) var items:[ModelListItem]
     private(set) var displayItems:[ModelListItem]
     
@@ -17,7 +17,7 @@ class ModelList
     
     func itemsLoaded(
         items:[ModelListItem],
-        itemsMap:[String:ModelListItem])
+        itemsMap:[String:[ModelListItem]])
     {
         self.items = items
         self.itemsMap = itemsMap
