@@ -71,4 +71,14 @@ class ControllerList:UIViewController
         self.viewListBar = viewListBar
         navigationItem.titleView = viewListBar
     }
+    
+    //MARK: internal
+    
+    func openMap(item:ModelListItem)
+    {
+        let controllerMap:ControllerMap = ControllerMap(model:item)
+        navigationController?.pushViewController(
+            controllerMap,
+            animated:true)
+    }
 }

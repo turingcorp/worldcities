@@ -6,8 +6,8 @@ class NavigationController:UINavigationController
     {
         super.init(nibName:nil, bundle:nil)
         
-        let list:ControllerList = ControllerList()
-        addChildViewController(list)
+        let controllerList:ControllerList = ControllerList()
+        addChildViewController(controllerList)
         
         navigationBar.barTintColor = UIColor.white
     }
